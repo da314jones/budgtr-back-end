@@ -23,16 +23,16 @@ app.get("/transactions", (req, res) => {
 app.get("/transactions/:index", readTransaction);
 
 // create
-app.post("./transaction", createTransaction);
+app.post("/transaction", createTransaction);
 
 // update
 app.put("/transaction/:index", updateTransaction);
 
 // delete route
-app.delete("./transaction/:index", removeTransaction);
+app.delete("/transaction/:index", removeTransaction);
 
 // middleware error handling always at the bottom
-app.get("./:index", (req, res) => {
+app.get("/:index", (req, res) => {
     const{ index }
  = req.params;
 if (index >= 0 && index < models.length) {
