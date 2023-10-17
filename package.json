@@ -13,6 +13,7 @@
   "dependencies": {
     "dom": "^0.0.3",
     "express": "^4.18.2",
+    "faker": "^6.6.6",
     "react": "^18.2.0"
   }
 }
