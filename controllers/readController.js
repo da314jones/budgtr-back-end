@@ -1,6 +1,6 @@
 const models = require('../models/models');
 
-const red = ("./:index", (req, res) => {
+const readController = ("./:index", (req, res) => {
     const idx = parseInt(req.params.index);
     if (idx >= 0 && idx < models.length) {
         res.json(models[idx]);
@@ -12,4 +12,4 @@ const red = ("./:index", (req, res) => {
 
 
 
-module.exports = read;
+module.exports = readController;
