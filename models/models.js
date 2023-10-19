@@ -147,7 +147,7 @@ const generateTransactions = (num = 10) => {
     const randomCategory = transactionCategories[Math.floor(Math.random() * transactionCategories.length)];
     const randomDescription = randomCategory.descriptions[Math.floor(Math.random() * randomCategory.descriptions.length)];
     const transaction = {
-      id: faker.random.uuid(),
+      id: faker.random.uuid(10),
       category: randomCategory.category,
       type: randomType,
       description: randomDescription,
