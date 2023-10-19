@@ -140,7 +140,12 @@ const generateTransactions = (num = 10) => {
     const options = ['credit', 'debit'];
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
+  };
+
+  function formatDateTime(dateObj) {
+    return `${dateObj.toLocaleDateString()} ${dateObj.toLocaleTimeString()}`;
   }
+  
 
   for (let i = 0; i < 50; i++) {
     const randomType = transactionTypes[Math.floor(Math.random() * transactionTypes.length)];
@@ -152,7 +157,7 @@ const generateTransactions = (num = 10) => {
       type: randomType,
       description: randomDescription,
       amount: faker.finance.amount(),
-      date: faker.date.recent(),
+      date: formatDateTime(faker.date.recent(),)
     };
     transactions.push(transaction);
   }
