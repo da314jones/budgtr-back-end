@@ -1,9 +1,6 @@
 const faker = require('faker');
-
-// Define transaction types
 const transactionTypes = ["Deposit", "Invoice", "Withdrawal", "Payment"];
 
-// Define transaction categories with descriptions
 const transactionCategories = [
   {
     category: "Basic Household Expenses",
@@ -133,7 +130,7 @@ const transactionCategories = [
   },
 ];
 
-const generateTransactions = (num = 10) => {
+const generateTransactions = (num = 50) => {
   const transactions = [];
 
   function generateRandomCreditOrDebit() {
@@ -165,6 +162,6 @@ const generateTransactions = (num = 10) => {
   return transactions;
 };
 
-const models = generateTransactions(100); 
+const models = generateTransactions(); 
 
 module.exports = models;

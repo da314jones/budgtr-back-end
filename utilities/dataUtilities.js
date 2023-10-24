@@ -2,7 +2,6 @@ const faker = require('faker');
 
 const transactionTypes = ["Deposit", "Invoice", "Withdrawal", "Payment"];
 
-// Define transaction categories with descriptions and maximum amounts
 const transactionCategories = [
   {
     category: "Basic Household Expenses",
@@ -133,12 +132,10 @@ const transactionCategories = [
 ];
 
 function getRandomAmount(description) {
-  // Find the category for the given description
   const category = transactionCategories.find((cat) =>
     cat.descriptions.includes(description)
   );
 
-  // Calculate the maximum amount based on the category
   let maxAmount = 0;
 
   switch (description) {
@@ -236,9 +233,7 @@ function getRandomAmount(description) {
       maxAmount = 75;
       break;
     case "Coffee Machine Purchase":
-      max
-
-Amount = 300;
+      maxAmount = 300;
       break;
     case "Movie Tickets":
       maxAmount = 100;
@@ -307,12 +302,10 @@ Amount = 300;
       maxAmount = 100;
       break;
     default:
-      // Default maximum amount for descriptions not listed above
       maxAmount = 1000;
       break;
   }
 
-  // Generate a random amount within the specified maximum
   const amount = faker.finance.amount({ max: maxAmount });
   return amount;
 }

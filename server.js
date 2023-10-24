@@ -1,8 +1,3 @@
-//  const { populateDatabase } = require('./models/populateDatabase');
-// populateDatabase();
-
-// Rest of your server initialization...
-
  const app = require('./app');
 
  require("dotenv").config();
